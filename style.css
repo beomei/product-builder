@@ -21,14 +21,14 @@
     --button-text: #ffffff;
     --toggle-btn-bg: rgba(0, 0, 0, 0.5);
 }
-
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 40px 0;
     background: var(--bg-gradient);
     transition: background 0.5s ease;
 }
@@ -44,11 +44,23 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     position: relative;
     transition: all 0.5s ease;
+    width: 90%;
+    max-width: 800px;
+}
+...
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-.theme-toggle {
-    position: absolute;
-    top: 15px;
+.comments-section {
+    margin-top: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
     right: 15px;
 }
 
