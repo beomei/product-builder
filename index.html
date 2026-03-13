@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>Animal Look Alike Test</title>
     <link rel="stylesheet" href="style.css">
+    <!-- TensorFlow and Teachable Machine Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="theme-toggle">
             <button id="theme-btn">🌙</button>
         </div>
-        <h1>Lotto Number Generator</h1>
-        <div id="lotto-numbers" class="lotto-numbers-container"></div>
-        <button id="generate-btn">Generate Numbers</button>
+        
+        <header class="main-header">
+            <h1>Animal Look Alike Test</h1>
+            <p>Are you a Dog person or a Cat person?</p>
+        </header>
+
+        <section class="animal-test-section">
+            <div id="webcam-container"></div>
+            <div id="label-container"></div>
+            <button type="button" id="start-test-btn" class="main-btn">Start Test</button>
+        </section>
+
+        <hr class="divider">
+
+        <section class="lotto-section">
+            <h2>Lotto Number Generator</h2>
+            <div id="lotto-numbers" class="lotto-numbers-container"></div>
+            <button id="generate-btn" class="secondary-btn">Generate Numbers</button>
+        </section>
 
         <hr class="divider">
 
@@ -31,23 +50,13 @@
         <div class="comments-section">
             <div id="disqus_thread"></div>
             <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
+                (function() {
                 var d = document, s = d.createElement('script');
                 s.src = 'https://product-builder-4.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
     </div>
     <script src="main.js"></script>

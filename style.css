@@ -8,6 +8,8 @@
     --button-bg: #ffffff;
     --button-text: #333333;
     --toggle-btn-bg: rgba(255, 255, 255, 0.3);
+    --bar-bg: rgba(255, 255, 255, 0.2);
+    --bar-fill: #ffffff;
 }
 
 [data-theme='dark'] {
@@ -20,7 +22,10 @@
     --button-bg: #333333;
     --button-text: #ffffff;
     --toggle-btn-bg: rgba(0, 0, 0, 0.5);
+    --bar-bg: rgba(255, 255, 255, 0.1);
+    --bar-fill: #4fc3f7;
 }
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -47,21 +52,140 @@ body {
     width: 90%;
     max-width: 800px;
 }
-...
-.submit-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+
+.main-header {
+    margin-bottom: 30px;
 }
 
-.comments-section {
-    margin-top: 20px;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
+.main-header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.main-header p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Animal Test Styles */
+.animal-test-section {
+    margin-bottom: 40px;
+}
+
+#webcam-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#webcam-container canvas {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 5px solid var(--container-bg);
+}
+
+.prediction-bar-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prediction-label {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.prediction-bar {
+    flex-grow: 1;
+    height: 20px;
+    background: var(--bar-bg);
     border-radius: 10px;
+    overflow: hidden;
 }
 
-    right: 15px;
+.prediction-fill {
+    height: 100%;
+    background: var(--bar-fill);
+    transition: width 0.3s ease;
+}
+
+.prediction-percent {
+    width: 50px;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.main-btn {
+    padding: 15px 40px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Lotto & Others */
+.lotto-section h2 {
+    color: var(--text-color);
+}
+
+.lotto-numbers-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.lotto-ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--ball-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--ball-text);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.secondary-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--toggle-btn-bg);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 40px 0;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 #theme-btn {
@@ -72,77 +196,7 @@ body {
     height: 40px;
     font-size: 1.2em;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
     color: var(--text-color);
-}
-
-#theme-btn:hover {
-    transform: rotate(20deg);
-}
-
-h1 {
-    font-size: 2.5em;
-    color: var(--text-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    transition: color 0.5s ease;
-}
-
-.lotto-numbers-container {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.lotto-ball {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--ball-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 10px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--ball-text);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: all 0.5s ease;
-}
-
-.lotto-ball:hover {
-    transform: scale(1.1);
-}
-
-#generate-btn {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-#generate-btn:hover {
-    opacity: 0.9;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-.divider {
-    border: 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 40px 0;
-}
-
-.contact-section h2 {
-    color: var(--text-color);
-    margin-bottom: 20px;
 }
 
 .contact-form {
@@ -153,32 +207,12 @@ h1 {
     margin: 0 auto;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: var(--container-bg);
     color: var(--text-color);
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--text-color);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-
-.contact-form textarea {
-    height: 100px;
-    resize: none;
 }
 
 .submit-btn {
@@ -189,10 +223,12 @@ h1 {
     color: var(--button-text);
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+.comments-section {
+    margin-top: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
 }
