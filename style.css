@@ -2,6 +2,7 @@
     /* Light Mode */
     --bg-gradient: linear-gradient(45deg, #fbc2eb, #a6c1ee);
     --container-bg: rgba(255, 255, 255, 0.2);
+    --nav-bg: rgba(255, 255, 255, 0.1);
     --text-color: #ffffff;
     --ball-bg: #ffffff;
     --ball-text: #333333;
@@ -16,6 +17,7 @@
     /* Dark Mode */
     --bg-gradient: linear-gradient(45deg, #2c3e50, #000000);
     --container-bg: rgba(0, 0, 0, 0.5);
+    --nav-bg: rgba(0, 0, 0, 0.8);
     --text-color: #f1f1f1;
     --ball-bg: #444444;
     --ball-text: #ffffff;
@@ -29,13 +31,43 @@
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 40px 0;
+    padding: 0;
     background: var(--bg-gradient);
     transition: background 0.5s ease;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+.top-nav {
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
 }
 
 .container {
@@ -51,6 +83,7 @@ body {
     transition: all 0.5s ease;
     width: 90%;
     max-width: 800px;
+    margin: 40px 0;
 }
 
 .main-header {
@@ -60,6 +93,7 @@ body {
 .main-header h1 {
     font-size: 3em;
     margin: 0;
+    color: var(--text-color);
 }
 
 .main-header p {
@@ -70,6 +104,20 @@ body {
 /* Animal Test Styles */
 .animal-test-section {
     margin-bottom: 40px;
+}
+
+.tool-description {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.tool-description h3 {
+    margin-top: 0;
 }
 
 .upload-container {
@@ -199,6 +247,11 @@ body {
     cursor: pointer;
 }
 
+.about-section {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
 .divider {
     border: 0;
     height: 1px;
@@ -255,4 +308,28 @@ body {
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 10px;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.7;
+}
+
+.footer-links a:hover {
+    opacity: 1;
 }

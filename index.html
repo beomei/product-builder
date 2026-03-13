@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Look Alike Test</title>
+    <title>Animal Look Alike Test - Dog or Cat? AI Analysis</title>
+    <meta name="description" content="Discover your inner animal with our AI-powered Animal Look Alike Test. Upload your photo and see if you look more like a dog or a cat using TensorFlow.js.">
+    <meta name="keywords" content="animal face test, ai face analysis, dog or cat, teachable machine, online personality test, AI tools">
     <meta name="google-adsense-account" content="ca-pub-5884634026224217">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5884634026224217"
      crossorigin="anonymous"></script>
@@ -13,6 +15,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
+    <nav class="top-nav">
+        <a href="#animal-test" class="nav-link">Animal Test</a>
+        <a href="#lotto" class="nav-link">Lotto Generator</a>
+        <a href="#about" class="nav-link">About AI</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
     <div class="container">
         <div class="theme-toggle">
             <button id="theme-btn">🌙</button>
@@ -20,10 +29,10 @@
         
         <header class="main-header">
             <h1>Animal Look Alike Test</h1>
-            <p>Are you a Dog person or a Cat person?</p>
+            <p>Advanced AI Facial Analysis: Dog or Cat?</p>
         </header>
 
-        <section class="animal-test-section">
+        <section id="animal-test" class="animal-test-section">
             <div class="upload-container">
                 <input type="file" id="image-upload" accept="image/*" hidden>
                 <label for="image-upload" class="upload-label">
@@ -37,27 +46,42 @@
                 </label>
             </div>
             <div id="label-container"></div>
-            <div id="loading-spinner" style="display: none;">Analyzing...</div>
+            <div id="loading-spinner" style="display: none;">Analyzing your facial features...</div>
+            
+            <article class="tool-description">
+                <h3>How the Animal Face Test Works</h3>
+                <p>Our AI model uses deep learning to identify the subtle facial traits associated with different "animal types." By analyzing thousands of dog and cat images, the Teachable Machine algorithm can determine which species your facial structure aligns with most closely.</p>
+                <p><strong>Note:</strong> Your privacy is our priority. No images are uploaded to any server. All AI processing happens locally in your web browser.</p>
+            </article>
         </section>
 
         <hr class="divider">
 
-        <section class="lotto-section">
+        <section id="lotto" class="lotto-section">
             <h2>Lotto Number Generator</h2>
+            <p>Need some luck? Our algorithm generates 6 unique numbers from 1 to 45.</p>
             <div id="lotto-numbers" class="lotto-numbers-container"></div>
             <button id="generate-btn" class="secondary-btn">Generate Numbers</button>
         </section>
 
         <hr class="divider">
 
-        <div class="contact-section">
-            <h2>Affiliate Inquiry</h2>
+        <section id="about" class="about-section">
+            <h2>About Our AI Tools</h2>
+            <p>We leverage cutting-edge web technologies like TensorFlow.js to bring advanced artificial intelligence directly to your browser. Our goal is to create fun, interactive, and privacy-conscious tools for everyone to enjoy.</p>
+        </section>
+
+        <hr class="divider">
+
+        <section id="contact" class="contact-section">
+            <h2>Affiliate Inquiry & Feedback</h2>
+            <p>Have a question or a partnership proposal? We'd love to hear from you!</p>
             <form action="https://formspree.io/f/xaqpjkkd" method="POST" class="contact-form">
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Inquiry Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Inquiry</button>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
-        </div>
+        </section>
 
         <hr class="divider">
 
@@ -72,6 +96,15 @@
                 })();
             </script>
         </div>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Animal Look Alike Test. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="#about">About Us</a> | 
+                <a href="#contact">Contact</a>
+            </div>
+        </footer>
     </div>
     <script src="main.js"></script>
 </body>
