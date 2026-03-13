@@ -83,8 +83,17 @@ imageUpload.addEventListener('change', async (e) => {
 async function predict() {
     const prediction = await model.predict(imagePreview);
     labelContainer.innerHTML = '';
+    
+    // Translate labels for display if they match expected ones
+    const labelMap = {
+        "Dog": "강아지상",
+        "Cat": "고양이상"
+    };
+
     for (let i = 0; i < maxPredictions; i++) {
-        const className = prediction[i].className;
+        let className = prediction[i].className;
+        className = labelMap[className] || className;
+        
         const probability = (prediction[i].probability * 100).toFixed(0);
         
         const predictionRow = document.createElement('div');
