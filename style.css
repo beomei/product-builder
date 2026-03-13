@@ -1,3 +1,26 @@
+:root {
+    /* Light Mode */
+    --bg-gradient: linear-gradient(45deg, #fbc2eb, #a6c1ee);
+    --container-bg: rgba(255, 255, 255, 0.2);
+    --text-color: #ffffff;
+    --ball-bg: #ffffff;
+    --ball-text: #333333;
+    --button-bg: #ffffff;
+    --button-text: #333333;
+    --toggle-btn-bg: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='dark'] {
+    /* Dark Mode */
+    --bg-gradient: linear-gradient(45deg, #2c3e50, #000000);
+    --container-bg: rgba(0, 0, 0, 0.5);
+    --text-color: #f1f1f1;
+    --ball-bg: #444444;
+    --ball-text: #ffffff;
+    --button-bg: #333333;
+    --button-text: #ffffff;
+    --toggle-btn-bg: rgba(0, 0, 0, 0.5);
+}
 
 body {
     font-family: 'Arial', sans-serif;
@@ -6,24 +29,53 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
+    background: var(--bg-gradient);
+    transition: background 0.5s ease;
 }
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--container-bg);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#theme-btn {
+    background: var(--toggle-btn-bg);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+#theme-btn:hover {
+    transform: rotate(20deg);
 }
 
 h1 {
     font-size: 2.5em;
-    color: #fff;
+    color: var(--text-color);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    transition: color 0.5s ease;
 }
 
 .lotto-numbers-container {
@@ -36,16 +88,16 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--ball-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 10px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: var(--ball-text);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .lotto-ball:hover {
@@ -57,14 +109,14 @@ h1 {
     font-size: 1.2em;
     border: none;
     border-radius: 10px;
-    background-color: #fff;
-    color: #333;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 #generate-btn:hover {
-    background-color: #f1f1f1;
+    opacity: 0.9;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
